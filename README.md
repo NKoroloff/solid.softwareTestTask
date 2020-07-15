@@ -1,2 +1,0 @@
-# solid.softwareTestTask
-solid.softwareTestTask

@@ -8,13 +8,7 @@ import 'state_providers/random_font_size.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIOverlays([]);
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight,
-    DeviceOrientation.portraitDown
-  ]);
+  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   runApp(MaterialApp(home: TestApplication()));
 }
 
@@ -32,12 +26,8 @@ class TestApplication extends StatelessWidget {
           ChangeNotifierProvider(create: (context) => RandomFontSize()),
         ],
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: OrientationBuilder(
-            builder: (context, orientation) {
-              return RandomBackground();
-            },
-          ),
+          //resizeToAvoidBottomInset: false,
+          body: RandomBackground(),
         ),
       ),
     );

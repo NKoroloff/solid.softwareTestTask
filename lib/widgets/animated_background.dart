@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/constants/duration.dart';
 import 'package:flutterapp/constants/strings.dart';
 import 'package:flutterapp/state_providers/random_color_background.dart';
 import 'package:flutterapp/state_providers/random_font_size.dart';
@@ -22,16 +23,20 @@ class AnimatedBackground extends StatelessWidget {
       decoration: BoxDecoration(
         color: randomColorState.getRandomColorBacground,
       ),
-      duration: Duration(milliseconds: 400),
+      duration: duration,
       child: Container(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                heyThere,
+              AnimatedDefaultTextStyle(
                 style: TextStyle(
                   fontSize: randomSizeState.getRandomNumber.toDouble(),
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                duration: duration,
+                child: Text(
+                  heyThere,
                 ),
               ),
               //bonus : add visual display random color, and fontSize

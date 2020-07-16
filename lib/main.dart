@@ -6,7 +6,7 @@ import 'screens/random_background.dart';
 import 'state_providers/random_color_background.dart';
 import 'state_providers/random_font_size.dart';
 
-void main() async{
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   runApp(MaterialApp(home: TestApplication()));
